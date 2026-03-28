@@ -8,7 +8,7 @@ const HeroSection = () => (
     <img
       src={heroBg}
       alt=""
-      className="absolute inset-0 w-full h-full object-cover"
+      className="absolute inset-0 w-full h-full object-cover object-[78%_center] md:object-center"
       width={1920}
       height={1080}
       loading="eager"
