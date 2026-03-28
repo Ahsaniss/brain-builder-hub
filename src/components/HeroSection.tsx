@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/capture-image.png";
 
 const HeroSection = () => (
-  <section className="relative min-h-[72svh] sm:min-h-[85svh] md:min-h-screen flex items-center justify-center overflow-hidden">
+  <section className="relative min-h-[92svh] sm:min-h-[95svh] md:min-h-screen flex items-center justify-center overflow-hidden">
     <img
       src={heroBg}
       alt=""
-      className="absolute inset-0 w-full h-full object-contain object-center md:object-cover md:object-center"
+      className="absolute inset-0 w-full h-full object-cover object-[72%_center] sm:object-[78%_center] md:object-center"
       width={1920}
       height={1080}
       loading="eager"
@@ -22,13 +22,13 @@ const HeroSection = () => (
     <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-secondary/20 blur-3xl animate-float [animation-delay:3s]" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl animate-pulse-glow" />
 
-    <div className="relative z-10 container mx-auto px-4 text-center">
+    <div className="relative z-10 container mx-auto px-4 text-center pt-8 sm:pt-10 md:pt-0">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <span className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-primary mb-6">
+        <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass text-xs sm:text-sm font-medium text-primary mb-4 sm:mb-6">
           🚀 Transform Your Career Today
         </span>
       </motion.div>
@@ -37,7 +37,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight"
+        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight"
       >
         Build Your Future with
         <br />
@@ -48,7 +48,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
-        className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+        className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
       >
         Learn Skills That Matter — Professional courses in tech, design, language & more.
       </motion.p>
@@ -57,12 +57,12 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.6 }}
-        className="mt-10 flex flex-wrap gap-4 justify-center"
+        className="mt-7 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center"
       >
-        <Button size="lg" asChild className="glow-gold font-semibold px-8">
+        <Button asChild className="glow-gold font-semibold h-10 sm:h-11 px-5 sm:px-8 text-sm sm:text-base">
           <Link to="/courses">Explore Courses</Link>
         </Button>
-        <Button size="lg" variant="outline" asChild className="border-primary/50 text-primary hover:bg-primary/10 font-semibold px-8">
+        <Button variant="outline" asChild className="border-primary/50 text-primary hover:bg-primary/10 font-semibold h-10 sm:h-11 px-5 sm:px-8 text-sm sm:text-base">
           <Link to="/contact">Join Now</Link>
         </Button>
       </motion.div>
@@ -72,7 +72,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.8 }}
-        className="mt-20 grid grid-cols-3 gap-6 max-w-lg mx-auto"
+        className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-3 gap-3 sm:gap-6 max-w-lg mx-auto"
       >
         {[
           { num: "14+", label: "Courses" },
@@ -80,8 +80,8 @@ const HeroSection = () => (
           { num: "20+", label: "Experts" },
         ].map((s) => (
           <div key={s.label} className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-gradient">{s.num}</div>
-            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient">{s.num}</div>
+            <div className="text-xs sm:text-sm text-muted-foreground mt-1">{s.label}</div>
           </div>
         ))}
       </motion.div>
