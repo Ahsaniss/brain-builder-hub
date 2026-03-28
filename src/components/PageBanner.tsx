@@ -14,10 +14,12 @@ const PageBanner = ({ title, subtitle, bgImage, children }: PageBannerProps) => 
       src={bgImage}
       alt=""
       className="absolute inset-0 w-full h-full object-cover"
-      loading="lazy"
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
     />
     <div className="page-banner-overlay" />
-    <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+    <div className="absolute inset-0 bg-gradient-to-b from-background/55 md:from-background/80 via-transparent to-background" />
 
     {/* Glowing orb */}
     <div className="absolute top-10 right-20 w-48 h-48 rounded-full bg-primary/15 blur-3xl animate-pulse-glow" />

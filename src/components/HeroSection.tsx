@@ -11,8 +11,11 @@ const HeroSection = () => (
       className="absolute inset-0 w-full h-full object-cover"
       width={1920}
       height={1080}
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
     />
-    <div className="absolute inset-0 bg-background/50" />
+    <div className="absolute inset-0 bg-background/35 md:bg-background/50" />
 
     {/* Glowing orbs */}
     <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/20 blur-3xl animate-float" />
