@@ -65,7 +65,7 @@ const HeroSection = () => (
       <svg viewBox="0 0 1440 120" className="w-full" preserveAspectRatio="none">
         <path
           d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"
-          fill="hsl(150 20% 98%)"
+          fill="hsl(0 0% 5%)"
         />
       </svg>
     </div>
