@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logoImage from "@/assets/converted_color.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -19,7 +20,13 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <Brain className="h-8 w-8 text-primary" />
+          <img
+            src={logoImage}
+            alt="Brain Builder logo"
+            className="h-8 w-8 object-contain"
+            loading="eager"
+            decoding="async"
+          />
           <span className="text-xl font-bold text-gradient">Brain Builder</span>
         </Link>
 

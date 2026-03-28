@@ -1,5 +1,5 @@
-import { Brain } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoImage from "@/assets/converted_color.png";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
@@ -7,7 +7,13 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
         <div>
           <Link to="/" className="flex items-center gap-2 mb-4">
-            <Brain className="h-6 w-6 text-primary" />
+            <img
+              src={logoImage}
+              alt="Brain Builder logo"
+              className="h-6 w-6 object-contain"
+              loading="lazy"
+              decoding="async"
+            />
             <span className="text-lg font-bold text-gradient">Brain Builder</span>
           </Link>
           <p className="text-sm text-muted-foreground">
