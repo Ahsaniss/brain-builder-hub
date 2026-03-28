@@ -82,4 +82,25 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(330 85% 60% / 0.4), 0 0 60px hsl(330 85% 60% / 0.1);
+  }
+  .glow-text {
+    text-shadow: 0 0 40px hsl(330 85% 60% / 0.5);
+  }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  .page-banner {
+    @apply relative py-32 overflow-hidden flex items-center justify-center;
+  }
+  .page-banner-overlay {
+    @apply absolute inset-0 bg-background/60;
+  }
+}
+
+@layer components {
+  .story-link * {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
 }
