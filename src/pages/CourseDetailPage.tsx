@@ -30,8 +30,15 @@ const CourseDetailPage = () => {
     <Layout>
       {/* Banner */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <img src={coursesBg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-background/70" />
+        <img
+          src={coursesBg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-background/45 md:bg-background/70" />
         <div className="absolute top-20 right-20 w-48 h-48 rounded-full bg-primary/15 blur-3xl animate-pulse-glow" />
 
         <div className="relative z-10 container mx-auto px-4">
