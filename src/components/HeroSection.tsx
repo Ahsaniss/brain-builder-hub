@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/capture-image.png";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section className="relative min-h-[100svh] md:min-h-screen flex items-center justify-center overflow-hidden">
     <img
       src={heroBg}
       alt=""
-      className="absolute inset-0 w-full h-full object-cover object-[78%_center] md:object-center"
+      className="absolute inset-0 w-full h-full object-cover object-right sm:object-[78%_center] md:object-center"
       width={1920}
       height={1080}
       loading="eager"
