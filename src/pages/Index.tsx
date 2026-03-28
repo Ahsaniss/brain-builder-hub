@@ -5,6 +5,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, GraduationCap } from "lucide-react";
 
+const activityImages = Object.entries(
+  import.meta.glob("../assets/*.{jpeg,jpg,png,webp}", {
+    eager: true,
+    import: "default",
+  }),
+)
+  .filter(([path]) => path.includes("WhatsApp Image"))
+  .map(([, image]) => image as string)
+  .slice(0, 8);
+
 const Index = () => (
   <Layout>
     <HeroSection />
@@ -64,6 +74,43 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Classroom Activities */}
+    <section className="py-24">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient">Classroom Activities</h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Real sessions where teachers are training students.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {activityImages.map((image, i) => (
+            <motion.div
+              key={image}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="glass rounded-xl overflow-hidden hover:glow-gold transition-all duration-300"
+            >
+              <img
+                src={image}
+                alt={`Classroom activity ${i + 1}`}
+                className="w-full h-56 object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="py-24">
       <div className="container mx-auto px-4 text-center">
@@ -71,7 +118,7 @@ const Index = () => (
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="glass rounded-3xl p-12 md:p-16 glow-pink max-w-3xl mx-auto"
+          className="glass rounded-3xl p-12 md:p-16 glow-gold max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Ready to <span className="text-gradient">Transform</span> Your Future?
@@ -81,7 +128,7 @@ const Index = () => (
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors glow-pink"
+            className="inline-flex items-center gap-2 mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors glow-gold"
           >
             Get Started <ArrowRight className="h-5 w-5" />
           </Link>

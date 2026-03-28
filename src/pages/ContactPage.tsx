@@ -108,7 +108,7 @@ const ContactPage = () => {
                 required
                 className="bg-muted/50"
               />
-              <Button type="submit" className="w-full glow-pink gap-2">
+              <Button type="submit" className="w-full glow-gold gap-2">
                 <Send className="h-4 w-4" /> Send Message
               </Button>
             </motion.form>

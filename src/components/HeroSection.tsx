@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/capture-image.png";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -56,7 +56,7 @@ const HeroSection = () => (
         transition={{ duration: 0.7, delay: 0.6 }}
         className="mt-10 flex flex-wrap gap-4 justify-center"
       >
-        <Button size="lg" asChild className="glow-pink font-semibold px-8">
+        <Button size="lg" asChild className="glow-gold font-semibold px-8">
           <Link to="/courses">Explore Courses</Link>
         </Button>
         <Button size="lg" variant="outline" asChild className="border-primary/50 text-primary hover:bg-primary/10 font-semibold px-8">
@@ -86,7 +86,7 @@ const HeroSection = () => (
 
     <div className="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 120" className="w-full" preserveAspectRatio="none">
-        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="hsl(0 0% 5%)" />
+        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--wave-fill)" />
       </svg>
     </div>
   </section>

@@ -28,7 +28,7 @@ const NGOPage = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-2xl p-8 hover:glow-pink transition-all duration-300"
+            className="glass rounded-2xl p-8 hover:glow-gold transition-all duration-300"
           >
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
               <Target className="h-6 w-6 text-primary" />
@@ -44,7 +44,7 @@ const NGOPage = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-2xl p-8 hover:glow-pink transition-all duration-300"
+            className="glass rounded-2xl p-8 hover:glow-gold transition-all duration-300"
           >
             <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-5">
               <Eye className="h-6 w-6 text-secondary" />
@@ -74,7 +74,7 @@ const NGOPage = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="glass rounded-2xl p-6 text-center hover:glow-pink hover-scale transition-all duration-300"
+              className="glass rounded-2xl p-6 text-center hover:glow-gold hover-scale transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <a.icon className="h-7 w-7 text-primary" />

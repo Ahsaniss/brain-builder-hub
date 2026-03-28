@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
-import coursesBg from "@/assets/courses-bg.jpg";
+import teamBg from "@/assets/WhatsApp Image 2026-03-27 at 10.47.12 PM (1).jpeg";
+
+const assetImages = Object.entries(
+  import.meta.glob("../assets/*.{jpeg,jpg,png,webp}", {
+    eager: true,
+    import: "default",
+  }),
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, image]) => ({ path: path.toLowerCase(), src: image as string }));
+
+const activityImages = assetImages
+  .filter((image) => image.path.includes("whatsapp image"))
+  .map((image) => image.src);
+
+const getTeamImage = (name: string, index: number) => {
+  const nameTokens = name
+    .toLowerCase()
+    .replace(/[^a-z\s]/g, " ")
+    .replace(/\bdr\b/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length > 2);
+
+  const directMatch = assetImages.find((image) => nameTokens.some((token) => image.path.includes(token)));
+  if (directMatch) return directMatch.src;
+
+  if (activityImages.length === 0) return "";
+  return activityImages[index % activityImages.length];
+};
 
 const team = [
   {
@@ -28,14 +56,17 @@ const team = [
     bio: "Experienced in administration and NGO operations. Ensuring smooth organizational processes and effective program delivery.",
     initials: "NN",
   },
-];
+].map((member, index) => ({
+  ...member,
+  image: getTeamImage(member.name, index),
+}));
 
 const TeamPage = () => (
   <Layout>
     <PageBanner
       title="Our Team"
       subtitle="Meet the passionate leaders behind Brain Builder & Right Way Foundation."
-      bgImage={coursesBg}
+      bgImage={teamBg}
     />
 
     <section className="py-24">
@@ -48,10 +79,21 @@ const TeamPage = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="glass rounded-2xl p-8 text-center group hover:glow-pink transition-all duration-300"
+              className="glass rounded-2xl p-8 text-center group hover:glow-gold transition-all duration-300"
             >
-              <div className="w-28 h-28 rounded-full mx-auto mb-6 bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl font-bold text-primary-foreground">{m.initials}</span>
+              <div className="w-28 h-28 rounded-full mx-auto mb-6 bg-gradient-to-br from-primary to-secondary p-1 group-hover:scale-110 transition-transform duration-300">
+                {m.image ? (
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full rounded-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-full flex items-center justify-center bg-background/80">
+                    <span className="text-3xl font-bold text-primary">{m.initials}</span>
+                  </div>
+                )}
               </div>
               <h3 className="text-xl font-bold text-foreground">{m.name}</h3>
               <p className="text-sm font-semibold text-primary mt-1">{m.role}</p>

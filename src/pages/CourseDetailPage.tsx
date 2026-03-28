@@ -44,7 +44,7 @@ const CourseDetailPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4"
           >
-            <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center glow-pink">
+            <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center glow-gold">
               <Icon className="h-8 w-8 text-primary" />
             </div>
             <div>
@@ -103,7 +103,7 @@ const CourseDetailPage = () => {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors glow-pink"
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors glow-gold"
                 >
                   Enroll Now
                 </Link>
